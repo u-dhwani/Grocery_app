@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101100973844",
+    "project_id": "dhwani-grocery-store",
+    "storage_bucket": "dhwani-grocery-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101100973844:android:b36c3ee22b874f3aa71c01",
+        "android_client_info": {
+          "package_name": "com.example.dhwanigrocerystore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101100973844-ptf2p5c80vvj6ai1vh3kpju44pbvobuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdXOybU08yCUIu65OPC7iP6mRxKcjFCKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101100973844-ptf2p5c80vvj6ai1vh3kpju44pbvobuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".activities.LoginActivity"
     android:background="@color/white">
     <ImageView
         android:id="@+id/groceryimage"
@@ -45,6 +45,7 @@
         android:elevation="3dp"
         android:padding="13dp"
         android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_login"
@@ -71,14 +72,16 @@
         android:id="@+id/donthaveanaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
         android:text="Don't Have An Account?"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signin_login"
-        app:layout_constraintHorizontal_bias=".4"
-        app:layout_constraintVertical_bias=".2"></TextView>
+        app:layout_constraintVertical_bias="0.372"></TextView>
 
     <TextView
         android:id="@+id/sign_up"
@@ -93,4 +96,16 @@
         app:layout_constraintTop_toBottomOf="@+id/signin_login"
         app:layout_constraintVertical_bias="1.0"></TextView>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        app:layout_constraintBottom_toTopOf="@+id/signin_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        app:layout_constraintVertical_bias="0.648"></ProgressBar>
 </androidx.constraintlayout.widget.ConstraintLayout>
