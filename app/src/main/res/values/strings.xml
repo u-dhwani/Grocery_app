@@ -12,4 +12,14 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="category">category</string>
     <string name="profile">profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="offers">offers</string>
+    <string name="new_products">new_products</string>
+    <string name="Profile">Profile</string>
+    <string name="NewProducts">New Products</string>
+    <string name="Offers">Offers</string>
+    <string name="MyOrders">My Orders</string>
+    <string name="MyCart">My Cart</string>
+    <string name="Category">Category</string>
 </resources>

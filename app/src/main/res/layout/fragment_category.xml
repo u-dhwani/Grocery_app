@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.category.CategoryFragment">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,4 +20,24 @@
         android:name="com.example.dhwanigrocerystore.ui.category.CategoryFragment"
         android:label="@string/category"
         tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/nav_offers"
+        android:name="com.example.dhwanigrocerystore.offersFragment"
+        android:label="@string/Offers"
+        tools:layout="@layout/fragment_offers" />
+    <fragment
+        android:id="@+id/nav_new_products"
+        android:name="com.example.dhwanigrocerystore.NewProductsFragment"
+        android:label="@string/NewProducts"
+        tools:layout="@layout/fragment_new_products" />
+    <fragment
+        android:id="@+id/nav_my_orders"
+        android:name="com.example.dhwanigrocerystore.MyOrdersFragment"
+        android:label="@string/MyOrders"
+        tools:layout="@layout/fragment_my_orders" />
+    <fragment
+        android:id="@+id/nav_my_cart"
+        android:name="com.example.dhwanigrocerystore.MyCartFragment"
+        android:label="@string/MyCart"
+        tools:layout="@layout/fragment_my_cart" />
 </navigation>
