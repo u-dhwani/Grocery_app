@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.category.CategoryFragment">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        tools:ignore="MissingConstraints" />
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="6dp"
+      android:layout_marginLeft="6dp"
+      android:id="@+id/cat_rec"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      ></androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

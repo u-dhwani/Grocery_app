@@ -1,5 +1,7 @@
 package com.example.dhwanigrocerystore.adapters;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.dhwanigrocerystore.R;
+import com.example.dhwanigrocerystore.activities.ViewAllActivity;
 import com.example.dhwanigrocerystore.models.PopularModel;
 
 import java.util.List;
 
-public class PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewHolder>{
+public class
+PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewHolder>{
     private Context context;
     private List<PopularModel> popularModelList;
 
@@ -27,12 +31,19 @@ public class PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewH
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.popular_item,parent,false));
     }
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(popularModelList.get(position).getName());
         holder.description.setText(popularModelList.get(position).getDescription());
         holder.rating.setText(popularModelList.get(position).getRating());
         holder.discount.setText(popularModelList.get(position).getDiscount());
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent=new Intent(context, ViewAllActivity.class);
+                intent.putExtra("type",popularModelList.get(position).getType());
+                context.startActivity(intent);
+            }
+        });
     }
     public int getItemCount() {
 

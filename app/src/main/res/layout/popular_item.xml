@@ -7,18 +7,19 @@
     app:cardCornerRadius="15dp">
 
     <LinearLayout
-        android:layout_width="287dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="5dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/pop_img"
-            android:layout_width="280dp"
+            android:layout_width="416dp"
             android:layout_height="190dp"
             android:scaleType="centerCrop"
             android:src="@drawable/offers_sale"
             app:riv_corner_radius="14dp"></com.makeramen.roundedimageview.RoundedImageView>
+
         <TextView
             android:id="@+id/pop_name"
             android:layout_width="wrap_content"
@@ -35,6 +36,7 @@
             android:maxLines="1"
             android:singleLine="true"
             android:text="Description" />
+
         <LinearLayout
             android:layout_width="279dp"
             android:layout_height="wrap_content"
@@ -45,25 +47,26 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="-5dp"
                 android:src="@drawable/ratingbar" />
+
             <TextView
                 android:id="@+id/pop_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="5.0"
                 android:layout_weight="1"
                 android:fontFamily="@font/alice"
-                />
+                android:text="5.0" />
+
             <TextView
                 android:id="@+id/pop_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Discount 20% Off"
-                android:textStyle="bold"
-                android:gravity="end"
                 android:fontFamily="@font/alice"
-                android:textColor="@color/purple_700"/>
+                android:gravity="end"
+                android:text="Discount 20% Off"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
