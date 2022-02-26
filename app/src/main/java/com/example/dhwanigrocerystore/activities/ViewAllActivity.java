@@ -42,7 +42,7 @@ public class ViewAllActivity extends AppCompatActivity {
         viewAllModelList=new ArrayList<>();
         viewAllAdapter=new ViewAllAdapter(this,viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
-        ImageView img=(ImageView) findViewById(R.id.pop_img);
+        ImageView img=(ImageView) findViewById(R.id.view_all_item_img);
         //Getting fruits
 
         if(type!=null && type.equalsIgnoreCase("fruit")){
