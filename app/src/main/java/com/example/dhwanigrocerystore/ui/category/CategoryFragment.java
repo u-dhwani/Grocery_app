@@ -1,5 +1,4 @@
 package com.example.dhwanigrocerystore.ui.category;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,8 +25,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 public class CategoryFragment extends Fragment {
     FirebaseFirestore db;
     RecyclerView recyclerView;
@@ -53,7 +50,6 @@ public class CategoryFragment extends Fragment {
                                 NavCategoryModel navCategoryModel=document.toObject(NavCategoryModel.class);
                                 categoryModelList.add(navCategoryModel);
                                 navCategoryAdapter.notifyDataSetChanged();
-
                             }
                         } else {
                             //Log.w(TAG, "Error getting documents.", task.getException());
@@ -61,7 +57,6 @@ public class CategoryFragment extends Fragment {
                         }
                     }
                 });
-
         return root;
     }
 }
