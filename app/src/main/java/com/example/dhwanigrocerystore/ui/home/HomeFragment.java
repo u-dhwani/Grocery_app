@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
         //popular items
         popularRec=root.findViewById(R.id.pop_rec);
         homeCatRec=root.findViewById(R.id.exp_rec);
-       recommendedRec=root.findViewById(R.id.recommended);
+        recommendedRec=root.findViewById(R.id.recommended);
         scrollView=root.findViewById(R.id.scroll_view);
         progressBar=root.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);

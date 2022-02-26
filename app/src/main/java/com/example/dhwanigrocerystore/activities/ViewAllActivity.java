@@ -32,45 +32,87 @@ public class ViewAllActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_all);
-        toolbar=findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        firestore=FirebaseFirestore.getInstance();
-        String type=getIntent().getStringExtra("type");
-        recyclerView=findViewById(R.id.view_all_rec);
+        firestore = FirebaseFirestore.getInstance();
+        String type = getIntent().getStringExtra("type");
+        recyclerView = findViewById(R.id.view_all_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        viewAllModelList=new ArrayList<>();
-        viewAllAdapter=new ViewAllAdapter(this,viewAllModelList);
+        viewAllModelList = new ArrayList<>();
+        viewAllAdapter = new ViewAllAdapter(this, viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
-        ImageView img=(ImageView) findViewById(R.id.view_all_item_img);
+        ImageView img = (ImageView) findViewById(R.id.view_all_item_img);
         //Getting fruits
 
-        if(type!=null && type.equalsIgnoreCase("fruit")){
-            firestore.collection("AllProducts").whereEqualTo("type","fruit").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        if (type != null && type.equalsIgnoreCase("fruit")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "fruit").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    for(DocumentSnapshot documentSnapshot: task.getResult().getDocuments()){
-                        ViewAllModel viewAllModel=documentSnapshot.toObject(ViewAllModel.class);
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
                     }
                 }
             });
         }
-            //Getting Vegetable
-            if(type!=null && type.equalsIgnoreCase("vegetable")){
-                firestore.collection("AllProducts").whereEqualTo("type","vegetable").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for(DocumentSnapshot documentSnapshot: task.getResult().getDocuments()){
-                            ViewAllModel viewAllModel=documentSnapshot.toObject(ViewAllModel.class);
-                            viewAllModelList.add(viewAllModel);
-                            viewAllAdapter.notifyDataSetChanged();
-                        }
+        //Getting Vegetable
+        if (type != null && type.equalsIgnoreCase("vegetable")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "vegetable").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
                     }
-                });
+                }
+            });
 
-            }
+        }
+        //Getting fish
+        if (type != null && type.equalsIgnoreCase("fish")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "fish").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+        }
+        //Getting eggs
+        if (type != null && type.equalsIgnoreCase("eggs")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "eggs").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+        }
+        //Getting milk
+        if (type != null && type.equalsIgnoreCase("milk")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "milk").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+        }
 
     }
 

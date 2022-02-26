@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.DetailedActivity">
+
     <ImageView
+        android:id="@+id/detailed_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:id="@+id/detailed_img"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        ></ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"></ImageView>
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alice"
-        android:text="Price :30/kg"
+        android:text="Price :Rs.30/kg"
         android:textColor="@color/purple_700"
         android:textSize="25sp"
         android:textStyle="bold"
