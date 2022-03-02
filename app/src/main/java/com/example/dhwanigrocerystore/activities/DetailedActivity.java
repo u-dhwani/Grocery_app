@@ -45,7 +45,6 @@ public class DetailedActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         firestore=FirebaseFirestore.getInstance();
         auth=FirebaseAuth.getInstance();
-
         final Object object=getIntent().getSerializableExtra("detail");
         if(object instanceof ViewAllModel){
             viewAllModel=(ViewAllModel) object;    }

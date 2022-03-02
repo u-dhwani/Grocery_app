@@ -1,48 +1,61 @@
 package com.example.dhwanigrocerystore.adapters;
-import android.content.Context;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.dhwanigrocerystore.R;
-import com.example.dhwanigrocerystore.models.RecommendedModel;
+import com.example.dhwanigrocerystore.activities.NavCategoryActivity;
+import com.example.dhwanigrocerystore.models.NavCategoryDetailedModel;
+
 import java.util.List;
-public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.ViewHolder> {
-    private Context context;
-    private List<RecommendedModel> list;
-    public RecommendedAdapter(Context context, List<RecommendedModel> list) {
+
+import io.grpc.Context;
+
+public class NavCategoryDetailedAdapter extends RecyclerView.Adapter<NavCategoryDetailedAdapter.ViewHolder> {
+     NavCategoryActivity context;
+    List<NavCategoryDetailedModel> list;
+
+    public NavCategoryDetailedAdapter(NavCategoryActivity context, List<NavCategoryDetailedModel> list) {
         this.context = context;
         this.list = list;
     }
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recommended_item, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.nav_category_detailed_item,parent,false));
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.name.setText(list.get(position).getName());
-        holder.description.setText(list.get(position).getDescription());
-        holder.rating.setText(list.get(position).getRating());
+        holder.price.setText(list.get(position).getPrice());
+
     }
+
     @Override
     public int getItemCount() {
         return list.size();
     }
-    public  class ViewHolder extends RecyclerView.ViewHolder {
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name,description,rating;
+        TextView name,price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.rec_img);
-            name=itemView.findViewById(R.id.rec_name);
-            description=itemView.findViewById(R.id.rec_dec);
-            rating=itemView.findViewById(R.id.rec_rating);
+            imageView=itemView.findViewById(R.id.cat_nav_img);
+            name=itemView.findViewById(R.id.nav_cat_name);
+            price=itemView.findViewById(R.id.price);
+
         }
     }
 }

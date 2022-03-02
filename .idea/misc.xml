@@ -28,6 +28,7 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_detailed.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_nav_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_view_all.xml" value="0.264" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/activity_welcome.xml" value="0.1377245508982036" />
@@ -38,13 +39,16 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_gallery.xml" value="0.21388888888888888" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_my_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_my_carts.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_my_orders.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_new_products.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_offers.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/fragment_slideshow.xml" value="0.21388888888888888" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/home_cat_items.xml" value="0.264" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/my_cart_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/nav_cat_item.xml" value="0.176" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/nav_category_detailed_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/popular_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/DhwaniGroceryStore/app/src/main/res/layout/recommended_item.xml" value="0.25416666666666665" />

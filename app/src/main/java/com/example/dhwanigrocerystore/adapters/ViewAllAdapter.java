@@ -44,7 +44,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         if (list.get(position).getType().equals("milk")) {
             holder.price.setText(list.get(position).getPrice() + "/litre");
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailedActivity.class);

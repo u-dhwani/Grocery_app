@@ -44,7 +44,6 @@ public class ViewAllActivity extends AppCompatActivity {
         recyclerView.setAdapter(viewAllAdapter);
         ImageView img = (ImageView) findViewById(R.id.view_all_item_img);
         //Getting fruits
-
         if (type != null && type.equalsIgnoreCase("fruit")) {
             firestore.collection("AllProducts").whereEqualTo("type", "fruit").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
