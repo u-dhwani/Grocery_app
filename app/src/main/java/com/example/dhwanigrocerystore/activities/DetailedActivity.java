@@ -1,7 +1,6 @@
 package com.example.dhwanigrocerystore.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-
+import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 import com.example.dhwanigrocerystore.R;
 import com.example.dhwanigrocerystore.models.ViewAllModel;
@@ -34,7 +32,7 @@ public class DetailedActivity extends AppCompatActivity {
     Toolbar toolbar;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-    ViewAllModel viewAllModel =null;
+    ViewAllModel viewAllModel=null;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,9 @@ public class DetailedActivity extends AppCompatActivity {
         price=findViewById(R.id.detailed_price);
         rating=findViewById(R.id.detailed_rating_text);
         description=findViewById(R.id.detailed_long_description);
-        if(viewAllModel!=null){
+        //detailedImg.setImageResource(getIntent().getIntExtra("detail",0));
+        if(viewAllModel==null)
+        {
             Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(detailedImg);
             rating.setText(viewAllModel.getRating());
             description.setText(viewAllModel.getDescription());
@@ -70,6 +70,10 @@ public class DetailedActivity extends AppCompatActivity {
                 totalPrice=viewAllModel.getPrice()*totalQuantity;
             }
         }
+        else{
+            Toast.makeText(this,"Null Activity",Toast.LENGTH_SHORT).show();
+        }
+
         addToCart=findViewById(R.id.add_to_cart);
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,8 +102,6 @@ public class DetailedActivity extends AppCompatActivity {
             }
         });
     }
-    private void setSupportActionBar(Toolbar toolbar) {
-    }
     private void addedToCart(){
         String saveCurrentDate,saveCurrentTime;
         Calendar calForDate=Calendar.getInstance();
@@ -123,4 +125,6 @@ public class DetailedActivity extends AppCompatActivity {
             }
         });
     }
+
 }
+

@@ -17,9 +17,8 @@ import com.example.dhwanigrocerystore.models.NavCategoryDetailedModel;
 import java.util.List;
 
 import io.grpc.Context;
-
 public class NavCategoryDetailedAdapter extends RecyclerView.Adapter<NavCategoryDetailedAdapter.ViewHolder> {
-     NavCategoryActivity context;
+    NavCategoryActivity context;
     List<NavCategoryDetailedModel> list;
 
     public NavCategoryDetailedAdapter(NavCategoryActivity context, List<NavCategoryDetailedModel> list) {

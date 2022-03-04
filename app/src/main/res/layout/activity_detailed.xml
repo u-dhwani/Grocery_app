@@ -7,6 +7,7 @@
     tools:context=".activities.DetailedActivity">
 
     <ImageView
+        android:src="@drawable/offers_sale"
         android:id="@+id/detailed_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"

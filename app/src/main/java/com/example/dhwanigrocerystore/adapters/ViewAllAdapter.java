@@ -13,8 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.Model;
 import com.example.dhwanigrocerystore.R;
 import com.example.dhwanigrocerystore.activities.DetailedActivity;
+import com.example.dhwanigrocerystore.activities.NavCategoryActivity;
 import com.example.dhwanigrocerystore.activities.ViewAllActivity;
 import com.example.dhwanigrocerystore.models.ViewAllModel;
 
@@ -33,6 +35,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.name.setText(list.get(position).getName());
         holder.description.setText(list.get(position).getDescription());
@@ -44,11 +47,13 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         if (list.get(position).getType().equals("milk")) {
             holder.price.setText(list.get(position).getPrice() + "/litre");
         }
+
        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailedActivity.class);
                 intent.putExtra("detail", list.get(position).getType());
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });

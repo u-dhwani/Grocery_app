@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.dhwanigrocerystore.R;
 import com.example.dhwanigrocerystore.activities.ViewAllActivity;
+import com.example.dhwanigrocerystore.activities.hello;
 import com.example.dhwanigrocerystore.models.PopularModel;
 
 import java.util.List;
 
-public class
-PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewHolder>{
-    private Context context;
-    private List<PopularModel> popularModelList;
+public class PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewHolder>{
+     Context context;
+     List<PopularModel> popularModelList;
 
     public PopularAdapters(Context context, List<PopularModel> popularModelList) {
         this.context = context;
@@ -54,11 +54,11 @@ PopularAdapters extends RecyclerView.Adapter <PopularAdapters.ViewHolder>{
         TextView name,description,rating,discount;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-        popImg = itemView.findViewById(R.id.pop_img);
-        name=itemView.findViewById(R.id.pop_name);
-        description=itemView.findViewById(R.id.pop_display);
-        rating=itemView.findViewById(R.id.pop_rating);
-        discount=itemView.findViewById(R.id.pop_discount);
+            popImg = itemView.findViewById(R.id.pop_img);
+            name=itemView.findViewById(R.id.pop_name);
+            description=itemView.findViewById(R.id.pop_display);
+            rating=itemView.findViewById(R.id.pop_rating);
+            discount=itemView.findViewById(R.id.pop_discount);
 
         }}
 }
