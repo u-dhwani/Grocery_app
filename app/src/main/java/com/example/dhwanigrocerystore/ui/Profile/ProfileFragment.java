@@ -109,6 +109,9 @@ public class ProfileFragment extends Fragment {
                 }
             });
         }
+        else{
+            Toast.makeText(getContext(),"Select Image",Toast.LENGTH_SHORT).show();
+        }
     }
 }
 

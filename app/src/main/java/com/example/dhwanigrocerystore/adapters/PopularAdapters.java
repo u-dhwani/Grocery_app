@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.dhwanigrocerystore.R;
 import com.example.dhwanigrocerystore.activities.ViewAllActivity;
-import com.example.dhwanigrocerystore.activities.hello;
 import com.example.dhwanigrocerystore.models.PopularModel;
 
 import java.util.List;

@@ -52,7 +52,7 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailedActivity.class);
-                intent.putExtra("detail", list.get(position).getType());
+                intent.putExtra("detail", list.get(position));
                 //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

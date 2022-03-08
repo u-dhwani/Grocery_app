@@ -54,7 +54,7 @@ public class DetailedActivity extends AppCompatActivity {
         rating=findViewById(R.id.detailed_rating_text);
         description=findViewById(R.id.detailed_long_description);
         //detailedImg.setImageResource(getIntent().getIntExtra("detail",0));
-        if(viewAllModel==null)
+        if(viewAllModel!=null)
         {
             Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(detailedImg);
             rating.setText(viewAllModel.getRating());
@@ -105,7 +105,7 @@ public class DetailedActivity extends AppCompatActivity {
     private void addedToCart(){
         String saveCurrentDate,saveCurrentTime;
         Calendar calForDate=Calendar.getInstance();
-        SimpleDateFormat currentDate=new SimpleDateFormat("MM dd,yyyy");
+        SimpleDateFormat currentDate=new SimpleDateFormat("MM/dd/yyyy");
         saveCurrentDate=currentDate.format(calForDate.getTime());
         SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss");
         saveCurrentTime=currentTime.format(calForDate.getTime());
@@ -116,8 +116,8 @@ public class DetailedActivity extends AppCompatActivity {
         cartMap.put("currentTime",saveCurrentTime);
         cartMap.put("totalQuantity",quantity.getText().toString());
         cartMap.put("totalPrice",totalPrice);
-        firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
-                .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                .collection("AddToCart").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 Toast.makeText(DetailedActivity.this,"Added To Cart", Toast.LENGTH_SHORT).show();

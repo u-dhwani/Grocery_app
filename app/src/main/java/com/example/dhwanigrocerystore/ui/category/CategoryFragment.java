@@ -3,6 +3,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +31,15 @@ public class CategoryFragment extends Fragment {
     RecyclerView recyclerView;
     List<NavCategoryModel> categoryModelList;
     NavCategoryAdapter navCategoryAdapter;
+    ProgressBar progressBar;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_category, container, false);
         db=FirebaseFirestore.getInstance();
         recyclerView=root.findViewById(R.id.cat_rec);
+        progressBar=root.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         categoryModelList=new ArrayList<>();
         navCategoryAdapter=new NavCategoryAdapter(getActivity(),categoryModelList);
@@ -50,10 +55,14 @@ public class CategoryFragment extends Fragment {
                                 NavCategoryModel navCategoryModel=document.toObject(NavCategoryModel.class);
                                 categoryModelList.add(navCategoryModel);
                                 navCategoryAdapter.notifyDataSetChanged();
+                                progressBar.setVisibility(View.GONE);
+                                recyclerView.setVisibility(View.VISIBLE);
                             }
                         } else {
                             //Log.w(TAG, "Error getting documents.", task.getException());
                             Toast.makeText(getActivity(), "Error"+task.getException(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                         }
                     }
                 });

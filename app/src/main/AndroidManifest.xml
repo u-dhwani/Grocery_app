@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DhwaniGroceryStore">
         <activity
+            android:name=".activities.OrderPlacedActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.NavCategoryActivity"
             android:exported="false" />
         <activity
