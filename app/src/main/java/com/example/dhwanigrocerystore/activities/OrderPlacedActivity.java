@@ -3,7 +3,10 @@ package com.example.dhwanigrocerystore.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.dhwanigrocerystore.MyCartFragment;
@@ -21,12 +24,14 @@ import java.util.List;
 
 public class OrderPlacedActivity extends AppCompatActivity {
     FirebaseAuth auth;
+    Button add_address_order;
     FirebaseFirestore firestore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_placed);
         auth=FirebaseAuth.getInstance();
+        add_address_order=findViewById(R.id.add_address_btn_order);
         firestore=FirebaseFirestore.getInstance();
         List<MyCartModel> list=(ArrayList<MyCartModel>)getIntent().getSerializableExtra("itemlist");
         if(list!=null && list.size()>0){
@@ -38,6 +43,12 @@ public class OrderPlacedActivity extends AppCompatActivity {
                 cartMap.put("currentTime",model.getCurrentTime());
                 cartMap.put("totalQuantity",model.getTotalQuantity());
                 cartMap.put("totalPrice",model.getTotalPrice());
+                add_address_order.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(OrderPlacedActivity.this,AddressActivity.class));
+                    }
+                });
                 firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
                         .collection("MyOrder").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                     @Override

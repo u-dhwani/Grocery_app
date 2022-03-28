@@ -3,6 +3,7 @@ package com.example.dhwanigrocerystore.models;
 import java.io.Serializable;
 
 public class MyCartModel implements Serializable {
+   // private static int totalPrice;
     String productName;
     String productPrice;
     String currentDate;
@@ -71,7 +72,7 @@ public class MyCartModel implements Serializable {
         this.totalQuantity = totalQuantity;
     }
 
-    public int getTotalPrice() {
+    public  int getTotalPrice() {
         return totalPrice;
     }
 

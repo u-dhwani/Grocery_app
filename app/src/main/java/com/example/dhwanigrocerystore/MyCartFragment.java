@@ -19,8 +19,10 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.dhwanigrocerystore.activities.AddAddressActivity;
 import com.example.dhwanigrocerystore.activities.OrderPlacedActivity;
 import com.example.dhwanigrocerystore.adapters.MyCartAdapter;
+import com.example.dhwanigrocerystore.models.AddressModel;
 import com.example.dhwanigrocerystore.models.MyCartModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,6 +45,8 @@ public class MyCartFragment extends Fragment {
     List<MyCartModel> cartModelList;
     ProgressBar progressBar;
     Button buynow;
+    FirebaseFirestore firestore;
+
     public MyCartFragment() {
         // Required empty public constructor
     }
@@ -85,21 +89,20 @@ public class MyCartFragment extends Fragment {
         buynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //startActivity(new Intent(getContext(), AddAddressActivity.class));
                 Intent intent=new Intent(getContext(), OrderPlacedActivity.class);
                 intent.putExtra("itemlist",(Serializable) cartModelList);
-                startActivity(intent);
+               startActivity(intent);
             }
         });
         return root;
-
     }
-
     private void calculateTotalAmount(List<MyCartModel> cartModelList) {
-        double totalAmount=0.0;
-        for(MyCartModel myCartModel:cartModelList){
-            totalAmount+=myCartModel.getTotalPrice();
+        double totalAmount = 0.0;
+        for (MyCartModel myCartModel : cartModelList) {
+            totalAmount += myCartModel.getTotalPrice();
         }
-        overTotalAmount.setText("Total Amount:"+totalAmount);
-    }
+        overTotalAmount.setText("Total Amount:" + totalAmount);
 
+    }
 }
