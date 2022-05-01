@@ -38,7 +38,7 @@ public class OrderPlacedActivity extends AppCompatActivity {
             for(MyCartModel model:list){
                 final HashMap<String,Object> cartMap=new HashMap<>();
                 cartMap.put("productName",model.getProductName());
-                cartMap.put("productPrice",model.getProductPrice());
+               // cartMap.put("productPrice",model.getProductPrice());
                 cartMap.put("currentDate",model.getCurrentDate());
                 cartMap.put("currentTime",model.getCurrentTime());
                 cartMap.put("totalQuantity",model.getTotalQuantity());

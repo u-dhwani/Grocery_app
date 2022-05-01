@@ -113,7 +113,7 @@ public class MyCartFragment extends Fragment {
         overTotalAmount.setText("Total Amount:" + totalAmount);
         final HashMap<String, Object> cartMap = new HashMap<>();
         cartMap.put("overTotalAmount", overTotalAmount);
-        firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+       /* firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
                 .collection("AddToCart").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
@@ -122,7 +122,7 @@ public class MyCartFragment extends Fragment {
             }
 
 
-        });
+        });*/
 
 
     }

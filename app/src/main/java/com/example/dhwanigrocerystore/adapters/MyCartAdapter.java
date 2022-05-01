@@ -27,7 +27,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     List<MyCartModel> cartModelList;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-    ViewAllModel viewAllModel = null;
+    List<ViewAllModel> viewAllModel;
     public MyCartAdapter(Context context, List<MyCartModel> cartModelList) {
         this.context = context;
         this.cartModelList = cartModelList;
@@ -40,13 +40,12 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.name.setText(cartModelList.get(position).getProductName());
-        holder.product_price.setText(cartModelList.get(position).getProductPrice());
-        //holder.price.setText();
-//        holder.price.setText(viewAllModel.getPrice());
+      //  holder.product_price.setText(String.valueOf();
         holder.date.setText(cartModelList.get(position).getCurrentDate());
         holder.time.setText(cartModelList.get(position).getCurrentTime());
         holder.quantity.setText(cartModelList.get(position).getTotalQuantity());
         holder.price.setText(String.valueOf(cartModelList.get(position).getTotalPrice()));
+
         holder.deleteItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
