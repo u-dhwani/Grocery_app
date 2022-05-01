@@ -6,18 +6,18 @@ public class MyCartModel implements Serializable {
 
     // private static int totalPrice;
     String productName;
-    String  productPrice;
+   String productPrice;
     String currentDate;
     String currentTime;
     String totalQuantity;
     int totalPrice;
     String documentId;
-    int  overTotalAmount;
+    Integer overTotalAmount;
     public MyCartModel(){
 
     }
 
-    public MyCartModel(String productName, String productPrice, String currentDate, String currentTime, String totalQuantity, int totalPrice,int  overTotalAmount) {
+    public MyCartModel(String productName,String productPrice, String currentDate, String currentTime, String totalQuantity, int totalPrice,int  overTotalAmount) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.currentDate = currentDate;
@@ -25,22 +25,6 @@ public class MyCartModel implements Serializable {
         this.totalQuantity = totalQuantity;
         this.totalPrice = totalPrice;
         this. overTotalAmount= overTotalAmount;
-    }
-
-    public int getOverTotalAmount() {
-        return overTotalAmount;
-    }
-
-    public void setOverTotalAmount(int overTotalAmount) {
-        this.overTotalAmount = overTotalAmount;
-    }
-
-    public String getDocumentId() {
-        return documentId;
-    }
-
-    public void setDocumentId(String documentId) {
-        this.documentId = documentId;
     }
 
     public String getProductName() {
@@ -83,11 +67,27 @@ public class MyCartModel implements Serializable {
         this.totalQuantity = totalQuantity;
     }
 
-    public  int getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    public Integer getOverTotalAmount() {
+        return overTotalAmount;
+    }
+
+    public void setOverTotalAmount(Integer overTotalAmount) {
+        this.overTotalAmount = overTotalAmount;
     }
 }

@@ -40,7 +40,8 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.name.setText(cartModelList.get(position).getProductName());
-        holder.price.setText(cartModelList.get(position).getProductPrice());
+        holder.product_price.setText(cartModelList.get(position).getProductPrice());
+        //holder.price.setText();
 //        holder.price.setText(viewAllModel.getPrice());
         holder.date.setText(cartModelList.get(position).getCurrentDate());
         holder.time.setText(cartModelList.get(position).getCurrentTime());
@@ -73,13 +74,13 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         return cartModelList.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name,price,date,time,quantity,totalPrice;
+        TextView name,product_price,date,time,quantity,price;
         Button deleteItem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             deleteItem=itemView.findViewById(R.id.delete);
             name=itemView.findViewById(R.id.product_name);
-            price=itemView.findViewById(R.id.product_price);
+            product_price=itemView.findViewById(R.id.product_price);
             date=itemView.findViewById(R.id.current_date);
             time=itemView.findViewById(R.id.current_time);
             quantity=itemView.findViewById(R.id.total_quantity);
