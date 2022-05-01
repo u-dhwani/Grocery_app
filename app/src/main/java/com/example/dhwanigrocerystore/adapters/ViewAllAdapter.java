@@ -22,6 +22,7 @@ import com.example.dhwanigrocerystore.models.ViewAllModel;
 
 import java.util.List;
 public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHolder> {
+    public Object name;
     Context context;
     List<ViewAllModel> list;
     public ViewAllAdapter(Context context, List<ViewAllModel> list) {

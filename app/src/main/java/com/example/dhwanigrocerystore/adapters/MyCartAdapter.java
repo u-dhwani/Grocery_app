@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dhwanigrocerystore.R;
 import com.example.dhwanigrocerystore.models.MyCartModel;
+import com.example.dhwanigrocerystore.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,7 +27,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     List<MyCartModel> cartModelList;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-    int totalPrice=0;
+    ViewAllModel viewAllModel = null;
     public MyCartAdapter(Context context, List<MyCartModel> cartModelList) {
         this.context = context;
         this.cartModelList = cartModelList;
@@ -40,6 +41,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.name.setText(cartModelList.get(position).getProductName());
         holder.price.setText(cartModelList.get(position).getProductPrice());
+//        holder.price.setText(viewAllModel.getPrice());
         holder.date.setText(cartModelList.get(position).getCurrentDate());
         holder.time.setText(cartModelList.get(position).getCurrentTime());
         holder.quantity.setText(cartModelList.get(position).getTotalQuantity());

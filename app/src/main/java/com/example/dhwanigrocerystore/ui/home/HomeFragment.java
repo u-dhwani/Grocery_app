@@ -178,7 +178,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
         return root;
     }
     private void searchProduct(String type){

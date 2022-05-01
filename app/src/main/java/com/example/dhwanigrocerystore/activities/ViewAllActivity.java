@@ -77,7 +77,22 @@ public class ViewAllActivity extends AppCompatActivity {
             });
 
         }
-        //Getting fish
+        //Getting Products
+        if (type != null && type.equalsIgnoreCase("products")) {
+            firestore.collection("AllProducts").whereEqualTo("type", "products").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+        }
+            //Getting fish
         if (type != null && type.equalsIgnoreCase("fish")) {
             firestore.collection("AllProducts").whereEqualTo("type", "fish").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
@@ -126,6 +141,5 @@ public class ViewAllActivity extends AppCompatActivity {
 
         }
     }
-    /*private void setSupportActionBar(Toolbar toolbar) {
-    }*/
+
 }
